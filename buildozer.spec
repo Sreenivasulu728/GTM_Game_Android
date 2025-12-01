@@ -15,7 +15,7 @@ source.dir = .
 source.include_exts = py,kv,mp3,png,jpg,ttf,wav
 
 # (list) Application requirements
-requirements = python3,kivy,six,pyjnius
+requirements = python3,kivy,six,pyjnius==1.5.0
 
 # (str) App version
 version = 1.0
@@ -27,7 +27,7 @@ orientation = portrait
 fullscreen = 1
 
 # (int) Target Android API (API 34 is required for new apps on Google Play as of Aug 2024)
-android.api = 34
+android.api = 33
 
 # (int) Minimum API your APK will support (API 24+ is a good minimum now)
 android.minapi = 24
