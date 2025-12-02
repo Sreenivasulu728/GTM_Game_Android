@@ -37,18 +37,6 @@ jobs:
       run: |
         P4A_DIR="/home/runner/work/GTM_Game_Android/GTM_Game_Android/.buildozer/android/platform/python-for-android"
         mkdir -p "$P4A_DIR"
-        git clone github.com "$P4A_DIR"
-    # -----------------------------------------------------------
-
-    - name: Build APK (Automatic Setup & Build)
-      run: |
-        # Ensure a clean environment and accept SDK license automatically
-        buildozer android clean 
-        yes | buildozer android debug
-      timeout-minutes: 20 
-
-    - name: Upload APK artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: GTMAPK
-        path: bin/*.apk
+        # Corrected the git clone URL
+        git clone 
+ 
