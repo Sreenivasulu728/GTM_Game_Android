@@ -7,39 +7,27 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Java Development Kit
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'temurin'
-        java-version: '17'
+      # Use the specialized action to handle all dependencies and the build process
+      - name: Build with Buildozer Action
+        uses: ArtemSBulgakov/buildozer-action@v1
+        id: buildozer # Assign an ID to access outputs
+        with:
+          # The action runs 'buildozer android debug' internally
+          command: buildozer android debug
+          app_android_accept_sdk_license: true
+          # This action ensures the environment is set up correctly every time
+          buildozer_warn_on_root: false
 
-    - name: Install system dependencies
-      run: |
-        sudo apt update
-        # CRITICAL LIBS: libffi-dev helps jnius compile
-        sudo apt install -y python3 python3-pip python3-setuptools git zip unzip openjdk-17-jdk libffi-dev build-essential libtool adb
-
-    - name: Install Buildozer and Cython
-      run: |
-        pip install --upgrade pip
-        # Install buildozer from github for latest fixes
-        pip install buildozer[github] cython
-
-    - name: Build APK (Automatic Setup & Build)
-      run: |
-        # Ensure a clean environment and accept SDK license automatically
-        buildozer android clean 
-        yes | buildozer android debug
-      timeout-minutes: 20 
-
-    - name: Upload APK artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: GTMAPK
-        path: bin/*.apk
+      # The APK will be available under the 'package' artifact name
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GTMAPK
+          # The action outputs the name of the generated file
+          path: ${{ steps.buildozer.outputs.filename }}
