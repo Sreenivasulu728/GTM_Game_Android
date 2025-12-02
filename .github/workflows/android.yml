@@ -13,18 +13,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Use the specialized action to handle all dependencies and the build process
+      # Use a stable, later version of the action (e.g., v1.2)
+      # and provide only the valid inputs ('command' is the primary input)
       - name: Build with Buildozer Action
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer # Assign an ID to access outputs
+        uses: ArtemSBulgakov/buildozer-action@v1.2 # Changed version tag
+        id: buildozer 
         with:
-          # The action runs 'buildozer android debug' internally
-          command: buildozer android debug
-          app_android_accept_sdk_license: true
-          # This action ensures the environment is set up correctly every time
-          buildozer_warn_on_root: false
+          # This command accepts the licenses automatically internally
+          command: buildozer android debug 
 
-      # The APK will be available under the 'package' artifact name
+      # The APK will be available under the 'GTMAPK' artifact name
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
