@@ -38,5 +38,5 @@ jobs:
         P4A_DIR="/home/runner/work/GTM_Game_Android/GTM_Game_Android/.buildozer/android/platform/python-for-android"
         mkdir -p "$P4A_DIR"
         # Corrected the git clone URL
-        git clone 
+        git clone https://github.com/Sreenivasulu728/GTM_Game_Android
  
