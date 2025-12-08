@@ -39,4 +39,15 @@ jobs:
         mkdir -p "$P4A_DIR"
         # Corrected the git clone URL
         git clone https://github.com/Sreenivasulu728/GTM_Game_Android
- 
+    - name: Run Buildozer to generate APK (Android Debug Build)
+      run: |
+          # This command triggers the entire build process, downloads SDKs, NDKs,
+          # clones P4A, compiles dependencies, and generates the APK.
+          buildozer android debug
+  
+    - name: Upload the generated APK artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: android-apk
+        # The default location buildozer puts the APK is usually 'bin/'
+        path: bin/*.apk
