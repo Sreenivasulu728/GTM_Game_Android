@@ -30,6 +30,8 @@ jobs:
         pip install --upgrade pip
         # Install buildozer from github for latest fixes
         pip install buildozer[github] cython
+        pip3 install --user --upgrade Cython==0.29.33 virtualenv
+
 
     # --- FIX FOR "FileNotFoundError: .../python-for-android" ---
     # This step ensures the required p4a repo is present before 'buildozer clean' runs.
