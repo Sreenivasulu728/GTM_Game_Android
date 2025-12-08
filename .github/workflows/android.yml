@@ -43,7 +43,7 @@ jobs:
       run: |
           # This command triggers the entire build process, downloads SDKs, NDKs,
           # clones P4A, compiles dependencies, and generates the APK.
-          buildozer android debug
+          yes | buildozer android debug
   
     - name: Upload the generated APK artifact
       uses: actions/upload-artifact@v4
