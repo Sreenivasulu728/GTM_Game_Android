@@ -36,7 +36,7 @@ android.minapi = 24
 android.archs = arm64-v8a, armeabi-v7a
 
 # (list) Permissions
-android.permissions = INTERNET
+android.permissions = INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
 
 # (str) Application icon file
 icon.filename = %(source.dir)s/icon.png
@@ -44,7 +44,11 @@ icon.filename = %(source.dir)s/icon.png
 
 [buildozer]
 # (int) Log level (3=debug, 2=info, 1=warning, 0=error)
-log_level = 3
+log_level = 2
 
 # (int) Skip warning when run as root
 warn_on_root = 0
+
+# (str) NDK version override: If API 33 fails to compile pyjnius with the automatic NDK,
+# you can uncomment the line below and try NDK r23b which is very stable:
+# android.ndk = 23b
