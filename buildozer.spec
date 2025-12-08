@@ -51,4 +51,7 @@ warn_on_root = 0
 
 # (str) NDK version override: If API 33 fails to compile pyjnius with the automatic NDK,
 # you can uncomment the line below and try NDK r23b which is very stable:
-# android.ndk = 23b
+android.ndk = 23b
+requirements = python3==3.10.12,kivy==2.3.0,hostpython3==3.10.12,pyjnius==1.5.0
+osx.python_version = 3.10.12
+osx.kivy_version = 2.3.0
