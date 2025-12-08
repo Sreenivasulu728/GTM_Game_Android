@@ -169,8 +169,87 @@ def similarity(a, b):
 
 # Your MOVIE DATA (same as before)
 MOVIES = [
-    # KEEP YOUR FULL MOVIE LIST HERE (same as your code)
-    # I didn't remove anything — paste your whole MOVIES list as-is
+    {
+        "answer": "Baahubali",
+        "characters": ["Prabhas", "Anushka Shetty", "Rana Daggubati"],
+        "hints": ["Rajamouli film", "Two parts blockbuster"],
+        "alternatives": ["Bahubali", "Baahubali The Beginning"],
+        "level": 1,
+        "time": 25
+    },
+    {
+        "answer": "Pushpa",
+        "characters": ["Allu Arjun", "Rashmika Mandanna", "Fahadh Faasil"],
+        "hints": ["Red sandalwood smuggling", "Director: Sukumar"],
+        "alternatives": ["Pushpa The Rise"],
+        "level": 1,
+        "time": 25
+    },
+    {
+        "answer": "Ala Vaikunthapuramulo",
+        "characters": ["Allu Arjun", "Pooja Hegde", "Jayaram"],
+        "hints": ["Trivikram film", "Huge musical hit"],
+        "alternatives": ["AVPL"],
+        "level": 1,
+        "time": 25
+    },
+    {
+        "answer": "KGF",
+        "characters": ["Yash", "Srinidhi Shetty", "Anant Nag"],
+        "hints": ["Rocky bhai", "Gold mines"],
+        "alternatives": ["KGF Chapter 1"],
+        "level": 1,
+        "time": 20
+    },
+    {
+        "answer": "RRR",
+        "characters": ["Ram Charan", "NTR", "Alia Bhatt"],
+        "hints": ["Rajamouli", "Two heroes combo"],
+        "alternatives": ["R R R"],
+        "level": 2,
+        "time": 20
+    },
+    {
+        "answer": "Arjun Reddy",
+        "characters": ["Vijay Deverakonda", "Shalini Pandey"],
+        "hints": ["Angry surgeon", "Big cult hit"],
+        "alternatives": [],
+        "level": 1,
+        "time": 25
+    },
+    {
+        "answer": "Geetha Govindam",
+        "characters": ["Vijay Deverakonda", "Rashmika Mandanna"],
+        "hints": ["Romantic comedy", "Superhit songs"],
+        "alternatives": ["Geeta Govindam"],
+        "level": 1,
+        "time": 25
+    },
+    {
+        "answer": "Maharshi",
+        "characters": ["Mahesh Babu", "Pooja Hegde", "Allari Naresh"],
+        "hints": ["Village adoption", "Businessman journey"],
+        "alternatives": [],
+        "level": 1,
+        "time": 25
+    },
+    {
+        "answer": "Jailer",
+        "characters": ["Rajinikanth", "Mohanlal", "Shiva Rajkumar"],
+        "hints": ["Nelson film", "Mass action"],
+        "alternatives": [],
+        "level": 2,
+        "time": 20
+    },
+    {
+        "answer": "Sita Ramam",
+        "characters": ["Dulquer Salmaan", "Mrunal Thakur", "Rashmika Mandanna"],
+        "hints": ["Love story", "Lieutenant Ram"],
+        "alternatives": ["Seetha Ramam"],
+        "level": 1,
+        "time": 25
+    }
+
 ]
 
 class GTMApp(App):
