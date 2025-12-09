@@ -1,0 +1,138 @@
+
+BoxLayout:
+    orientation: "vertical"
+    padding: 16
+    spacing: 12
+    canvas.before:
+        Color:
+            rgba: 0.12, 0.16, 0.28, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        size_hint_y: None
+        height: "42dp"
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: 0.16, 0.22, 0.38, 1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [8]
+
+        Label:
+            id: level_label
+            text: "Level: 1"
+            size_hint_x: .33
+            color: 1,1,1,1
+            bold: True
+
+        Label:
+            id: score_label
+            text: "Score: 0"
+            size_hint_x: .33
+            color: 1,1,1,1
+
+        Label:
+            id: highscore_label
+            text: "High: 0"
+            size_hint_x: .34
+            color: 1,1,1,1
+
+    BoxLayout:
+        size_hint_y: None
+        height: "32dp"
+        spacing: 10
+
+        Label:
+            id: timer_label
+            text: "Time: 0s"
+            size_hint_x: .5
+            color: 1,1,1,1
+
+        Label:
+            id: lives_label
+            text: "Lives: 3"
+            size_hint_x: .5
+            color: 1,1,1,1
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: 16
+        spacing: 8
+        canvas.before:
+            Color:
+                rgba: 1,1,1,0.12
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [10]
+
+        Label:
+            id: characters_label
+            text: "Characters will appear here"
+            font_size: "24sp"
+            bold: True
+            color: 1,1,1,1
+            halign: "center"
+            valign: "middle"
+            text_size: self.size
+
+    TextInput:
+        id: answer_input
+        hint_text: "Type the movie name…"
+        size_hint_y: None
+        height: "52dp"
+        multiline: False
+        background_color: 1,1,1,0.9
+        foreground_color: 0,0,0,1
+        font_size: "20sp"
+        padding: 10
+
+    BoxLayout:
+        size_hint_y: None
+        height: "52dp"
+        spacing: 8
+
+        Button:
+            text: "Submit"
+            background_color: 0.1,0.5,1,1
+            on_press: app.check_answer()
+
+        Button:
+            text: "Hint (-5)"
+            background_color: 1,0.6,0.1,1
+            on_press: app.show_hint()
+
+        Button:
+            text: "Skip (-2)"
+            background_color: 1,0.2,0.2,1
+            on_press: app.skip_question()
+
+    Label:
+        id: feedback_label
+        text: ""
+        font_size: "18sp"
+        color: 1,1,1,1
+        size_hint_y: None
+        height: "40dp"
+        halign: "center"
+        valign: "middle"
+        text_size: self.size
+
+    BoxLayout:
+        size_hint_y: None
+        height: "48dp"
+        spacing: 8
+
+        Button:
+            text: "Next Question"
+            background_color: 0.2,0.7,0.3,1
+            on_press: app.next_question()
+
+        Button:
+            text: "Restart"
+            background_color: 0.2,0.4,1,1
+            on_press: app.restart_game()
