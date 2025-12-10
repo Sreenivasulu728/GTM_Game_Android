@@ -12,7 +12,7 @@ package.domain = org.example
 source.dir = .
 
 # (list) File extensions to include (added mp3 and wav for your music)
-source.include_exts = py,kv,mp3,png,jpg,ttf,wav
+source.include_exts = py,kv,mp3,png,jpg,ttf,wav,tfif
 
 # (list) Application requirements (using specific version 1.5.0 to fix compilation error)
 requirements = python3,kivy,six,pyjnius==1.5.0
@@ -39,8 +39,8 @@ android.archs = arm64-v8a, armeabi-v7a
 android.permissions = INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
 
 # (str) Application icon file
-icon.filename = %(source.dir)s/app_icon.png
-presplash.filename = %(source.dir)s/splash.png
+icon.filename = %(source.dir)s/assets/images/app_icon.png
+presplash.filename = %(source.dir)s/assets/images/splash.png
 
 
 [buildozer]
