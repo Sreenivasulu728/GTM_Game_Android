@@ -39,7 +39,8 @@ android.archs = arm64-v8a, armeabi-v7a
 android.permissions = INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
 
 # (str) Application icon file
-icon.filename = %(source.dir)s/icon.png
+icon.filename = %(source.dir)s/app_icon.png
+presplash.filename = %(source.dir)s/splash.png
 
 
 [buildozer]
