@@ -15,7 +15,7 @@ source.dir = .
 source.include_exts = py,kv,mp3,png,jpg,ttf,wav,tfif
 
 # (list) Application requirements (using specific version 1.5.0 to fix compilation error)
-requirements = python3,kivy,six,pyjnius==1.5.0
+requirements = python3,kivy,six
 
 # (str) App version
 version = 1.0
